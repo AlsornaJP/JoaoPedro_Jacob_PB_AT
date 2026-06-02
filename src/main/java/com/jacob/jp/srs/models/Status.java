@@ -1,4 +1,4 @@
-package com.jacob.jp.srs.Models;
+package com.jacob.jp.srs.models;
 
 public enum Status {
     CONCLUIDO,
