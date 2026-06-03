@@ -1,5 +1,6 @@
 package com.jacob.jp.srs.service;
 
+import com.jacob.jp.srs.DTO.AlunoDTO;
 import com.jacob.jp.srs.models.Aluno;
 import com.jacob.jp.srs.models.Professor;
 import com.jacob.jp.srs.repositories.AlunoRepository;
@@ -21,7 +22,7 @@ public class GestaoContaService {
         this.professorValidator = professorValidator;
     }
 
-    public Aluno registrarAluno(Aluno aluno) {
+    public AlunoDTO registrarAluno(AlunoDTO aluno) {
         alunoValidator.validarEmail(aluno);
 //        geradorDeMatricula.gerarMatricula(aluno);
         return alunoRepository.save(aluno);

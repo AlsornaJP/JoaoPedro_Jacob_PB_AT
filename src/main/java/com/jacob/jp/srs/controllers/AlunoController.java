@@ -1,5 +1,9 @@
 package com.jacob.jp.srs.controllers;
 
+import com.jacob.jp.srs.DTO.AlunoDTO;
+import com.jacob.jp.srs.service.GestaoContaService;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,4 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/aluno")
 public class AlunoController {
 
+    private GestaoContaService service;
+
+    public AlunoController(GestaoContaService service) {
+        this.service = service;
+    }
+
+    @PostMapping
+    public AlunoDTO CriarConta (@RequestBody AlunoDTO aluno){return service.registrarAluno(aluno);}
 }
