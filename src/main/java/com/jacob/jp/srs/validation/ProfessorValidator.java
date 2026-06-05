@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProfessorValidator {
 
-    private ProfessorRepository professorRepository;
+    private final ProfessorRepository professorRepository;
 
     public ProfessorValidator(ProfessorRepository professorRepository) {
         this.professorRepository = professorRepository;

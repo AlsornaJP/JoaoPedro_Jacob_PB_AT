@@ -2,6 +2,8 @@ package com.jacob.jp.srs.controllers;
 
 import com.jacob.jp.srs.models.DTO.AlunoDTO;
 import com.jacob.jp.srs.service.GestaoContaService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,5 +20,8 @@ public class AlunoController {
     }
 
     @PostMapping
-    public String CriarConta (@RequestBody AlunoDTO aluno){return service.registrarAluno(aluno);}
+    public ResponseEntity<AlunoDTO> CriarConta (@RequestBody AlunoDTO aluno){
+        service.registrarAluno(aluno);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
 }

@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 @Component
 public class GeradorDeMatricula {
 
-    private AlunoValidator alunoValidator;
+    private final AlunoValidator alunoValidator;
 
     public GeradorDeMatricula(AlunoValidator alunoValidator) {
         this.alunoValidator = alunoValidator;

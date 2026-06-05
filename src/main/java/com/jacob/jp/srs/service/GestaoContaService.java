@@ -13,11 +13,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class GestaoContaService {
 
-    private AlunoRepository alunoRepository;
-    private ProfessorRepository professorRepository;
-    private AlunoValidator alunoValidator;
-    private ProfessorValidator professorValidator;
-    private GeradorDeMatricula geradorDeMatricula;
+    private final AlunoRepository alunoRepository;
+    private final ProfessorRepository professorRepository;
+    private final AlunoValidator alunoValidator;
+    private final ProfessorValidator professorValidator;
+    private final GeradorDeMatricula geradorDeMatricula;
 
     public GestaoContaService(AlunoRepository alunoRepository,
                               ProfessorRepository professorRepository,
