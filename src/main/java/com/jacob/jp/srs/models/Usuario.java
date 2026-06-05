@@ -10,14 +10,14 @@ public abstract class Usuario {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    protected Integer id;
 
     @Column(name = "nome", nullable = false, length = 50)
-    private String nome;
+    protected String nome;
 
     @Column(name = "email", nullable = false, length = 50, unique = true)
-    private String email;
+    protected String email;
 
     @Column(name = "senha", nullable = false)
-    private  String senha;
+    protected String senha;
 }
