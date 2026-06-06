@@ -4,6 +4,7 @@ import com.jacob.jp.srs.exception.EmailAlreadyExistsException;
 import com.jacob.jp.srs.models.DTO.AlunoDTO;
 import com.jacob.jp.srs.models.DTO.ProfessorDTO;
 import com.jacob.jp.srs.service.GestaoContaService;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
@@ -13,7 +14,8 @@ public class MenuCriarConta {
 
     GestaoContaService gestaoContaService;
 
-    Scanner scanner = new Scanner(System.in);
+    @Setter
+    Scanner scanner;
 
     public MenuCriarConta(GestaoContaService gestaoContaService) {
         this.gestaoContaService = gestaoContaService;
@@ -72,4 +74,6 @@ public class MenuCriarConta {
             System.out.println("Erro: " + e.getMessage());
         }
     }
+
 }
+

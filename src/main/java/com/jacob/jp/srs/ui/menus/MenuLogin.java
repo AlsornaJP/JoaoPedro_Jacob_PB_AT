@@ -4,6 +4,7 @@ import com.jacob.jp.srs.exception.EmailNotFoundException;
 import com.jacob.jp.srs.models.DTO.AlunoDTO;
 import com.jacob.jp.srs.models.DTO.ProfessorDTO;
 import com.jacob.jp.srs.service.GestaoContaService;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
@@ -13,7 +14,8 @@ public class MenuLogin {
 
     GestaoContaService gestaoContaService;
 
-    Scanner scanner = new Scanner(System.in);
+    @Setter
+    Scanner scanner;
 
     public MenuLogin(GestaoContaService gestaoContaService) {
         this.gestaoContaService = gestaoContaService;
@@ -65,5 +67,4 @@ public class MenuLogin {
             System.out.println("Erro: " + e.getMessage());
         }
     }
-
 }

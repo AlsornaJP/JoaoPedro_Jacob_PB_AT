@@ -11,13 +11,16 @@ import java.util.Scanner;
 public class ConsoleUI implements CommandLineRunner {
 
     private final MenuCriarConta menuCriarConta;
+    private final MenuLogin menuLogin;
 
     private final Scanner scanner = new Scanner(System.in);
-    private final MenuLogin menuLogin;
 
     public ConsoleUI(MenuCriarConta menuCriarConta, MenuLogin menuLogin) {
         this.menuCriarConta = menuCriarConta;
         this.menuLogin = menuLogin;
+
+        menuCriarConta.setScanner(this.scanner);
+        menuLogin.setScanner(this.scanner);
     }
 
     @Override
