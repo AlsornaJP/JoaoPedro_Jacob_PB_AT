@@ -2,10 +2,13 @@ package com.jacob.jp.srs.service;
 
 import com.jacob.jp.srs.models.DTO.AlunoDTO;
 import com.jacob.jp.srs.models.Aluno;
+import com.jacob.jp.srs.models.DTO.ProfessorDTO;
+import com.jacob.jp.srs.models.Professor;
 import com.jacob.jp.srs.repositories.AlunoRepository;
 import com.jacob.jp.srs.repositories.ProfessorRepository;
 import com.jacob.jp.srs.utils.AlunoMapper;
 import com.jacob.jp.srs.utils.GeradorDeMatricula;
+import com.jacob.jp.srs.utils.ProfessorMapper;
 import com.jacob.jp.srs.validation.AlunoValidator;
 import com.jacob.jp.srs.validation.ProfessorValidator;
 import org.springframework.stereotype.Service;
@@ -31,10 +34,25 @@ public class GestaoContaService {
         this.geradorDeMatricula = geradorDeMatricula;
     }
 
-    public String registrarAluno(AlunoDTO aluno) {
+    public void registrarAluno(AlunoDTO aluno) {
         alunoValidator.validarEmail(aluno);
         geradorDeMatricula.gerarMatricula(aluno);
         Aluno novoAluno = alunoRepository.save(AlunoMapper.toEntity(aluno));
-        return novoAluno.getMatricula();
     }
+
+    public void registrarProfessor(ProfessorDTO professor) {
+        professorValidator.validarEmail(professor);
+        Professor novoProfessor = professorRepository.save(ProfessorMapper.toEntity(professor));
+    }
+
+    public AlunoDTO loginAluno(String email, String senha) {
+        alunoValidator.validarLogin(email, senha);
+        return alunoValidator.buscarPorEmail(email);
+    }
+
+    public ProfessorDTO loginProfessor(String email, String senha) {
+        professorValidator.validarLogin(email, senha);
+        return professorValidator.buscarPorEmail(email);
+    }
+
 }

@@ -20,8 +20,8 @@ public class AlunoController {
     }
 
     @PostMapping
-    public ResponseEntity<AlunoDTO> CriarConta (@RequestBody AlunoDTO aluno){
+    public ResponseEntity<String> CriarConta (@RequestBody AlunoDTO aluno){
         service.registrarAluno(aluno);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.status(HttpStatus.CREATED).body("Registro concluído com êxito!");
     }
 }

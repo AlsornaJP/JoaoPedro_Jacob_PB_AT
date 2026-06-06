@@ -21,5 +21,6 @@ public class AlunoDTO {
         this.nome = aluno.getNome();
         this.email = aluno.getEmail();
         this.senha = aluno.getSenha();
+        this.matricula = aluno.getMatricula();
     }
 }

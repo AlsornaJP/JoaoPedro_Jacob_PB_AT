@@ -17,6 +17,7 @@ public class Aluno extends Usuario{
     private @Getter String matricula;
 
     public Aluno(AlunoDTO alunoDTO) {
+        this.id = alunoDTO.getId();
         this.nome = alunoDTO.getNome();
         this.email = alunoDTO.getEmail();
         this.senha = alunoDTO.getSenha();
