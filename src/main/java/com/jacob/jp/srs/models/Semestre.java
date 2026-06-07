@@ -1,12 +1,32 @@
 package com.jacob.jp.srs.models;
 
+import com.jacob.jp.srs.models.DTO.SemestreDTO;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDate;
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
+@Entity
+@Table(name = "semestres")
+@NoArgsConstructor
+@Getter
 public class Semestre {
-    private @Getter @Setter Integer id;
-    private @Getter @Setter LocalDate dataInicial;
-    private @Getter @Setter LocalDate dataFinal;
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(name = "data_inicial", nullable = false)
+    private LocalDate dataInicial;
+
+    @Column(name = "data_final", nullable = false)
+    private LocalDate dataFinal;
+
+    public Semestre(SemestreDTO semestreDTO) {
+        this.id = semestreDTO.getId();
+        this.dataInicial = semestreDTO.getDataInicial();
+        this.dataFinal = semestreDTO.getDataFinal();
+    }
 }

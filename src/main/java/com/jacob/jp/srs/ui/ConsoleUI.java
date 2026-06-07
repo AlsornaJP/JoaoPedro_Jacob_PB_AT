@@ -27,7 +27,7 @@ public class ConsoleUI implements CommandLineRunner {
     public void run(String... args) {
         boolean running = true;
         while (running) {
-            System.out.println("\n=== SRS - Sistema de Registro ===");
+            System.out.println("\n=== Alumni - Sistema de Registro ===");
             System.out.println("1. Criar conta");
             System.out.println("2. Login");
             System.out.println("0. Sair");
