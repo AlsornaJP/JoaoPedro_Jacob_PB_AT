@@ -18,8 +18,8 @@ public class TurmaAlunoDTO {
 
     public TurmaAlunoDTO(TurmaAluno turmaAluno) {
         this.id = turmaAluno.getId();
-        this.aluno  = turmaAluno.getAluno();
-        this.turma  = turmaAluno.getTurma();
+        this.aluno  = new AlunoDTO(turmaAluno.getAluno());
+        this.turma  = new TurmaDTO(turmaAluno.getTurma());
         this.status = turmaAluno.getStatus();
     }
 }

@@ -1,7 +1,5 @@
 package com.jacob.jp.srs.models;
 
-import com.jacob.jp.srs.models.DTO.TurmaAlunoDTO;
-import com.jacob.jp.srs.models.DTO.TurmaDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,10 +27,10 @@ public class TurmaAluno {
     @Column(name = "status", nullable = false)
     private Status status;
 
-    public TurmaAluno(TurmaAlunoDTO turmaAlunoDTO) {
-        this.id = turmaAlunoDTO.getId();
-        this.aluno = turmaAlunoDTO.getAluno();
-        this.turma = turmaAlunoDTO.getTurma();
-        this.status = turmaAlunoDTO.getStatus();
+    public TurmaAluno(Integer id, Aluno aluno, Turma turma, Status status) {
+        this.id = id;
+        this.aluno = aluno;
+        this.turma = turma;
+        this.status = status;
     }
 }

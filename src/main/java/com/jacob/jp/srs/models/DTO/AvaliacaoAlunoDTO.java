@@ -21,6 +21,7 @@ public class AvaliacaoAlunoDTO {
     private String anotacoes;
 
     public AvaliacaoAlunoDTO(AvaliacaoAluno avaliacaoAluno) {
+        this.id             = avaliacaoAluno.getId();
         this.aluno          = new AlunoDTO(avaliacaoAluno.getAluno());
         this.avaliacao      = new AvaliacaoDTO(avaliacaoAluno.getAvaliacao());
         this.nota           = avaliacaoAluno.getNota();

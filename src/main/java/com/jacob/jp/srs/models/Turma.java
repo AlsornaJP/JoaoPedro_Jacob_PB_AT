@@ -39,18 +39,20 @@ public class Turma {
     @Column(name = "horario2", length = 20)
     private String horario2;
 
+    @Column(name = "ativo", nullable = false)
+    private boolean ativo = true;
+
     @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TurmaAluno> alunos;
 
-    public Turma(TurmaDTO turmaDTO) {
-        this.id = turmaDTO.getId();
-        this.professor = turmaDTO.getProfessor();
-        this.disciplina = turmaDTO.getDisciplina();
-        this.semestre = turmaDTO.getSemestre();
-        this.sala = turmaDTO.getSala();
-        this.horario1 = turmaDTO.getHorario1();
-        this.horario2 = turmaDTO.getHorario2();
-        this.alunos = turmaDTO.getAlunos();
+    public Turma(Integer id, Professor professor, Disciplina disciplina, Semestre semestre, String sala, String horario1, String horario2) {
+        this.id = id;
+        this.professor = professor;
+        this.disciplina = disciplina;
+        this.semestre = semestre;
+        this.sala = sala;
+        this.horario1 = horario1;
+        this.horario2 = horario2;
     }
 }
 

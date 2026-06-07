@@ -1,6 +1,5 @@
 package com.jacob.jp.srs.models;
 
-import com.jacob.jp.srs.models.DTO.AvaliacaoAlunoDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -38,9 +37,13 @@ public class AvaliacaoAluno {
     @Column(name = "anotacoes", columnDefinition = "TEXT")
     private String anotacoes;
 
-    public AvaliacaoAluno(AvaliacaoAlunoDTO avaliacaoAlunoDTO) {
-        this.id =  avaliacaoAlunoDTO.getId();
-        this.aluno = avaliacao;
+    public AvaliacaoAluno(Integer id, Avaliacao avaliacao, Aluno aluno, LocalDateTime dataEntrega, double nota, LocalDateTime dataAlteracao, String anotacoes) {
+        this.id = id;
         this.avaliacao = avaliacao;
+        this.aluno = aluno;
+        this.dataEntrega = dataEntrega;
+        this.nota = nota;
+        this.dataAlteracao = dataAlteracao;
+        this.anotacoes = anotacoes;
     }
 }
