@@ -5,10 +5,15 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalTime;
 import java.util.List;
 
 @Entity
-@Table(name = "turmas")
+@Table(name = "turmas",
+        uniqueConstraints = {
+                @UniqueConstraint(name = "uc_turma_professor_horario1", columnNames = {"professor_id", "semestre_id", "horario1"}),
+                @UniqueConstraint(name = "uc_turma_professor_horario2", columnNames = {"professor_id", "semestre_id", "horario2"})
+        })
 @NoArgsConstructor
 @Getter
 public class Turma {
@@ -34,10 +39,10 @@ public class Turma {
     private String sala;
 
     @Column(name = "horario1", nullable = false, length = 20)
-    private String horario1;
+    private LocalTime horario1;
 
     @Column(name = "horario2", length = 20)
-    private String horario2;
+    private LocalTime horario2;
 
     @Column(name = "ativo", nullable = false)
     private boolean ativo = true;
@@ -45,7 +50,7 @@ public class Turma {
     @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TurmaAluno> alunos;
 
-    public Turma(Integer id, Professor professor, Disciplina disciplina, Semestre semestre, String sala, String horario1, String horario2) {
+    public Turma(Integer id, Professor professor, Disciplina disciplina, Semestre semestre, String sala, LocalTime horario1, LocalTime horario2) {
         this.id = id;
         this.professor = professor;
         this.disciplina = disciplina;
@@ -54,5 +59,8 @@ public class Turma {
         this.horario1 = horario1;
         this.horario2 = horario2;
     }
-}
 
+    public void fechar(){
+        this.ativo = false;
+    }
+}

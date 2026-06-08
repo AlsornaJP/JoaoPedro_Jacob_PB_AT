@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalTime;
 import java.util.List;
 
 @NoArgsConstructor
@@ -17,8 +18,8 @@ public class TurmaDTO {
     private DisciplinaDTO disciplina;
     private SemestreDTO semestre;
     private String sala;
-    private String horario1;
-    private String horario2;
+    private LocalTime horario1;
+    private LocalTime horario2;
     private List<TurmaAlunoDTO> alunos;
 
     public TurmaDTO(Turma turma) {
