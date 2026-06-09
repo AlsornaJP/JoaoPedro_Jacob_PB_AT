@@ -33,4 +33,8 @@ public class TurmaAluno {
         this.turma = turma;
         this.status = status;
     }
+
+    public void trancar() {
+        this.status = Status.TRANCADO;
+    }
 }

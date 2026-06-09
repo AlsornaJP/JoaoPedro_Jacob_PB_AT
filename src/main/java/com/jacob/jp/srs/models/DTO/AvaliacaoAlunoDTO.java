@@ -19,14 +19,18 @@ public class AvaliacaoAlunoDTO {
     private LocalDateTime dataEntrega;
     private LocalDateTime dataAlteracao;
     private String anotacoes;
+    private boolean atraso;
+    private boolean corrigido;
 
     public AvaliacaoAlunoDTO(AvaliacaoAluno avaliacaoAluno) {
-        this.id             = avaliacaoAluno.getId();
-        this.aluno          = new AlunoDTO(avaliacaoAluno.getAluno());
-        this.avaliacao      = new AvaliacaoDTO(avaliacaoAluno.getAvaliacao());
-        this.nota           = avaliacaoAluno.getNota();
-        this.dataEntrega    = avaliacaoAluno.getDataEntrega();
-        this.dataAlteracao  = avaliacaoAluno.getDataAlteracao();
-        this.anotacoes      = avaliacaoAluno.getAnotacoes();
+        this.id            = avaliacaoAluno.getId();
+        this.aluno         = new AlunoDTO(avaliacaoAluno.getAluno());
+        this.avaliacao     = new AvaliacaoDTO(avaliacaoAluno.getAvaliacao());
+        this.nota          = avaliacaoAluno.getNota();
+        this.dataEntrega   = avaliacaoAluno.getDataEntrega();
+        this.dataAlteracao = avaliacaoAluno.getDataAlteracao();
+        this.anotacoes     = avaliacaoAluno.getAnotacoes();
+        this.atraso        = avaliacaoAluno.isAtraso();
+        this.corrigido     = avaliacaoAluno.isCorrigido();
     }
 }
