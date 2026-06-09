@@ -1,5 +1,10 @@
 package com.jacob.jp.srs.service;
 
+import com.jacob.jp.srs.exception.DisciplinaNotFoundException;
+import com.jacob.jp.srs.exception.HorarioConflictException;
+import com.jacob.jp.srs.exception.ProfessorNotFoundException;
+import com.jacob.jp.srs.exception.SemestreNotFoundException;
+import com.jacob.jp.srs.exception.TurmaNotFoundException;
 import com.jacob.jp.srs.models.Disciplina;
 import com.jacob.jp.srs.models.DTO.TurmaDTO;
 import com.jacob.jp.srs.models.Professor;
@@ -23,28 +28,28 @@ public class GestaoTurmaService {
                               ProfessorRepository professorRepository,
                               DisciplinaRepository disciplinaRepository,
                               SemestreRepository semestreRepository) {
-        this.turmaRepository     = turmaRepository;
-        this.professorRepository = professorRepository;
+        this.turmaRepository      = turmaRepository;
+        this.professorRepository  = professorRepository;
         this.disciplinaRepository = disciplinaRepository;
-        this.semestreRepository  = semestreRepository;
+        this.semestreRepository   = semestreRepository;
     }
 
     public TurmaDTO abrirTurma(TurmaDTO dto) {
         Professor professor = professorRepository.findById(dto.getProfessor().getId())
-                .orElseThrow(() -> new IllegalArgumentException("Professor não encontrado."));
+                .orElseThrow(ProfessorNotFoundException::new);
         Disciplina disciplina = disciplinaRepository.findById(dto.getDisciplina().getId())
-                .orElseThrow(() -> new IllegalArgumentException("Disciplina não encontrada."));
+                .orElseThrow(DisciplinaNotFoundException::new);
         Semestre semestre = semestreRepository.findById(dto.getSemestre().getId())
-                .orElseThrow(() -> new IllegalArgumentException("Semestre não encontrado."));
+                .orElseThrow(SemestreNotFoundException::new);
 
         if (turmaRepository.existsByProfessorIdAndSemestreIdAndHorario1(
                 professor.getId(), semestre.getId(), dto.getHorario1())) {
-            throw new IllegalArgumentException("Professor já possui uma turma nesse horário.");
+            throw new HorarioConflictException();
         }
         if (dto.getHorario2() != null &&
                 turmaRepository.existsByProfessorIdAndSemestreIdAndHorario2(
                         professor.getId(), semestre.getId(), dto.getHorario2())) {
-            throw new IllegalArgumentException("Professor já possui uma turma nesse horário.");
+            throw new HorarioConflictException();
         }
 
         Turma turma = turmaRepository.save(new Turma(dto.getId(), professor, disciplina, semestre, dto.getSala(), dto.getHorario1(), dto.getHorario2()));
@@ -53,7 +58,7 @@ public class GestaoTurmaService {
 
     public void fecharTurma(Integer id) {
         Turma turma = turmaRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Turma não encontrada."));
+                .orElseThrow(TurmaNotFoundException::new);
         turma.fechar();
         turmaRepository.save(turma);
     }

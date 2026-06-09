@@ -9,11 +9,7 @@ import java.time.LocalTime;
 import java.util.List;
 
 @Entity
-@Table(name = "turmas",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uc_turma_professor_horario1", columnNames = {"professor_id", "semestre_id", "horario1"}),
-                @UniqueConstraint(name = "uc_turma_professor_horario2", columnNames = {"professor_id", "semestre_id", "horario2"})
-        })
+@Table(name = "turmas")
 @NoArgsConstructor
 @Getter
 public class Turma {
