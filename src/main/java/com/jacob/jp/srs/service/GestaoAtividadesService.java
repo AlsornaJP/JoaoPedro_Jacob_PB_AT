@@ -4,15 +4,20 @@ import com.jacob.jp.srs.exception.AlunoNotFoundException;
 import com.jacob.jp.srs.exception.AvaliacaoAlunoNotFoundException;
 import com.jacob.jp.srs.exception.AvaliacaoNotFoundException;
 import com.jacob.jp.srs.exception.InscricaoNotFoundException;
+import com.jacob.jp.srs.exception.TurmaAcessoNegadoException;
+import com.jacob.jp.srs.exception.TurmaInativaException;
+import com.jacob.jp.srs.exception.TurmaNotFoundException;
 import com.jacob.jp.srs.models.Aluno;
 import com.jacob.jp.srs.models.Avaliacao;
 import com.jacob.jp.srs.models.AvaliacaoAluno;
 import com.jacob.jp.srs.models.DTO.AvaliacaoAlunoDTO;
 import com.jacob.jp.srs.models.DTO.AvaliacaoDTO;
+import com.jacob.jp.srs.models.Turma;
 import com.jacob.jp.srs.repositories.AlunoRepository;
 import com.jacob.jp.srs.repositories.AvaliacaoAlunoRepository;
 import com.jacob.jp.srs.repositories.AvaliacaoRepository;
 import com.jacob.jp.srs.repositories.TurmaAlunoRepository;
+import com.jacob.jp.srs.repositories.TurmaRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -25,15 +30,41 @@ public class GestaoAtividadesService {
     private final AvaliacaoAlunoRepository avaliacaoAlunoRepository;
     private final AlunoRepository alunoRepository;
     private final TurmaAlunoRepository turmaAlunoRepository;
+    private final TurmaRepository turmaRepository;
 
     public GestaoAtividadesService(AvaliacaoRepository avaliacaoRepository,
                                    AvaliacaoAlunoRepository avaliacaoAlunoRepository,
                                    AlunoRepository alunoRepository,
-                                   TurmaAlunoRepository turmaAlunoRepository) {
+                                   TurmaAlunoRepository turmaAlunoRepository,
+                                   TurmaRepository turmaRepository) {
         this.avaliacaoRepository      = avaliacaoRepository;
         this.avaliacaoAlunoRepository = avaliacaoAlunoRepository;
         this.alunoRepository          = alunoRepository;
         this.turmaAlunoRepository     = turmaAlunoRepository;
+        this.turmaRepository          = turmaRepository;
+    }
+
+    public AvaliacaoDTO criarAvaliacao(AvaliacaoDTO dto) {
+        Turma turma = turmaRepository.findById(dto.getTurma().getId())
+                .orElseThrow(TurmaNotFoundException::new);
+
+        if (!turma.isAtivo()) {
+            throw new TurmaInativaException();
+        }
+        if (!turma.getProfessor().getId().equals(dto.getTurma().getProfessor().getId())) {
+            throw new TurmaAcessoNegadoException();
+        }
+
+        Avaliacao avaliacao = avaliacaoRepository.save(
+                new Avaliacao(turma, null, dto.getTitulo(), dto.getEnunciado(), dto.getDataEntrega(), dto.getPeso()));
+        return new AvaliacaoDTO(avaliacao);
+    }
+
+    public List<AvaliacaoAlunoDTO> listarEntregasPorAvaliacao(Integer avaliacaoId) {
+        return avaliacaoAlunoRepository.findAllByAvaliacaoId(avaliacaoId)
+                .stream()
+                .map(AvaliacaoAlunoDTO::new)
+                .toList();
     }
 
     public void entregarAtividade(AvaliacaoAlunoDTO dto) {

@@ -9,4 +9,5 @@ public interface AvaliacaoAlunoRepository extends JpaRepository<AvaliacaoAluno, 
     boolean existsByAlunoIdAndAvaliacaoId(Integer alunoId, Integer avaliacaoId);
     AvaliacaoAluno findByAlunoIdAndAvaliacaoId(Integer alunoId, Integer avaliacaoId);
     List<AvaliacaoAluno> findAllByAlunoId(Integer alunoId);
+    List<AvaliacaoAluno> findAllByAvaliacaoId(Integer avaliacaoId);
 }

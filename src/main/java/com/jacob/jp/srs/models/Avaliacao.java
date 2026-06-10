@@ -35,12 +35,12 @@ public class Avaliacao {
     @Column(name = "peso", nullable = false)
     private int peso;
 
-    public Avaliacao(AvaliacaoDTO avaliacaoDTO) {
-        this.id = avaliacaoDTO.getId();
-        this.turma = avaliacaoDTO.getTurma();
-        this.titulo = avaliacaoDTO.getTitulo();
-        this.enunciado = avaliacaoDTO.getEnunciado();
-        this.dataEntrega = avaliacaoDTO.getDataEntrega();
-        this.peso = avaliacaoDTO.getPeso();
+    public Avaliacao(Turma turma, Integer id, String titulo, String enunciado, LocalDateTime dataEntrega, int peso) {
+        this.turma = turma;
+        this.id = id;
+        this.titulo = titulo;
+        this.enunciado = enunciado;
+        this.dataEntrega = dataEntrega;
+        this.peso = peso;
     }
 }
