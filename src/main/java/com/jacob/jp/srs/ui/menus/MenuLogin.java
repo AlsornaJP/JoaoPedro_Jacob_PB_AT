@@ -21,22 +21,22 @@ public class MenuLogin {
         this.gestaoContaService = gestaoContaService;
     }
 
-    public void startMenu() {
+    public Object startMenu() {
         System.out.println("\n--- Login ---");
         System.out.println("1. Aluno");
         System.out.println("2. Professor");
         System.out.println("0. Voltar");
         System.out.print("Escolha: ");
 
-        switch (scanner.nextLine()) {
+        return switch (scanner.nextLine()) {
             case "1" -> loginAluno();
             case "2" -> loginProfessor();
-            case "0" -> {}
-            default  -> System.out.println("Opção inválida.");
-        }
+            case "0" -> null;
+            default  -> { System.out.println("Opção inválida."); yield null; }
+        };
     }
 
-    private void loginAluno() {
+    private AlunoDTO loginAluno() {
         System.out.println("\n--- Login de Aluno ---");
 
         System.out.print("Email: ");
@@ -47,12 +47,14 @@ public class MenuLogin {
         try {
             AlunoDTO aluno = gestaoContaService.loginAluno(email, senha);
             System.out.println("Bem-vindo, " + aluno.getNome() + "! (Matrícula: " + aluno.getMatricula() + ")");
+            return aluno;
         } catch (EmailNotFoundException | IllegalArgumentException e) {
             System.out.println("Erro: " + e.getMessage());
+            return null;
         }
     }
 
-    private void loginProfessor() {
+    private ProfessorDTO loginProfessor() {
         System.out.println("\n--- Login de Professor ---");
 
         System.out.print("Email: ");
@@ -63,8 +65,10 @@ public class MenuLogin {
         try {
             ProfessorDTO professor = gestaoContaService.loginProfessor(email, senha);
             System.out.println("Bem-vindo, " + professor.getNome() + "!");
+            return professor;
         } catch (EmailNotFoundException | IllegalArgumentException e) {
             System.out.println("Erro: " + e.getMessage());
+            return null;
         }
     }
 }

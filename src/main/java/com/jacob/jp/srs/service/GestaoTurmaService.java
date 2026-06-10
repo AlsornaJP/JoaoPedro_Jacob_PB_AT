@@ -16,6 +16,8 @@ import com.jacob.jp.srs.repositories.SemestreRepository;
 import com.jacob.jp.srs.repositories.TurmaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GestaoTurmaService {
 
@@ -61,5 +63,12 @@ public class GestaoTurmaService {
                 .orElseThrow(TurmaNotFoundException::new);
         turma.fechar();
         turmaRepository.save(turma);
+    }
+
+    public List<TurmaDTO> listarTurmasPorProfessor(Integer professorId) {
+        return turmaRepository.findAllByProfessorId(professorId)
+                .stream()
+                .map(TurmaDTO::new)
+                .toList();
     }
 }

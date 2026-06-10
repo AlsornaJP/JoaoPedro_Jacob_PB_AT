@@ -8,6 +8,7 @@ import com.jacob.jp.srs.models.Aluno;
 import com.jacob.jp.srs.models.Avaliacao;
 import com.jacob.jp.srs.models.AvaliacaoAluno;
 import com.jacob.jp.srs.models.DTO.AvaliacaoAlunoDTO;
+import com.jacob.jp.srs.models.DTO.AvaliacaoDTO;
 import com.jacob.jp.srs.repositories.AlunoRepository;
 import com.jacob.jp.srs.repositories.AvaliacaoAlunoRepository;
 import com.jacob.jp.srs.repositories.AvaliacaoRepository;
@@ -71,6 +72,13 @@ public class GestaoAtividadesService {
         return avaliacaoAlunoRepository.findAllByAlunoId(aluno.getId())
                 .stream()
                 .map(AvaliacaoAlunoDTO::new)
+                .toList();
+    }
+
+    public List<AvaliacaoDTO> listarAvaliacoesPorTurma(Integer turmaId) {
+        return avaliacaoRepository.findAllByTurmaId(turmaId)
+                .stream()
+                .map(AvaliacaoDTO::new)
                 .toList();
     }
 }
