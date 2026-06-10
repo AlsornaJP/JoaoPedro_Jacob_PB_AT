@@ -44,7 +44,7 @@ public class AvaliacaoAluno {
     @Column(name = "corrigido", nullable = false)
     private boolean corrigido = false;
 
-    public AvaliacaoAluno(Integer id, Avaliacao avaliacao, Aluno aluno, LocalDateTime dataEntrega, double nota, LocalDateTime dataAlteracao, String anotacoes) {
+    public AvaliacaoAluno(Integer id, Avaliacao avaliacao, Aluno aluno, LocalDateTime dataEntrega, double nota, LocalDateTime dataAlteracao, String anotacoes, boolean atraso) {
         this.id            = id;
         this.avaliacao     = avaliacao;
         this.aluno         = aluno;
@@ -52,7 +52,7 @@ public class AvaliacaoAluno {
         this.nota          = nota;
         this.dataAlteracao = dataAlteracao;
         this.anotacoes     = anotacoes;
-        this.atraso        = false;
+        this.atraso        = atraso;
         this.corrigido     = false;
     }
 
@@ -64,7 +64,9 @@ public class AvaliacaoAluno {
         this.corrigido = true;
     }
 
-    public void atrasouEntrega() {
-        this.atraso = true;
+    public void atualizarEntrega(LocalDateTime dataAlteracao, String anotacoes, boolean atraso) {
+        this.dataAlteracao = dataAlteracao;
+        this.anotacoes     = anotacoes;
+        this.atraso        = atraso;
     }
 }
