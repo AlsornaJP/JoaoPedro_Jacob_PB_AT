@@ -10,8 +10,10 @@ import com.jacob.jp.srs.models.DTO.AvaliacaoAlunoDTO;
 import com.jacob.jp.srs.models.DTO.AvaliacaoDTO;
 import com.jacob.jp.srs.models.DTO.TurmaAlunoDTO;
 import com.jacob.jp.srs.models.DTO.TurmaDTO;
+import com.jacob.jp.srs.models.Status;
 import com.jacob.jp.srs.service.GestaoAtividadesService;
 import com.jacob.jp.srs.service.GestaoMatriculaService;
+import com.jacob.jp.srs.service.GestaoTurmaService;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
@@ -23,14 +25,17 @@ public class MenuAluno {
 
     private final GestaoMatriculaService gestaoMatriculaService;
     private final GestaoAtividadesService gestaoAtividadesService;
+    private final GestaoTurmaService gestaoTurmaService;
 
     @Setter
     private Scanner scanner;
 
     public MenuAluno(GestaoMatriculaService gestaoMatriculaService,
-                     GestaoAtividadesService gestaoAtividadesService) {
+                     GestaoAtividadesService gestaoAtividadesService,
+                     GestaoTurmaService gestaoTurmaService) {
         this.gestaoMatriculaService  = gestaoMatriculaService;
         this.gestaoAtividadesService = gestaoAtividadesService;
+        this.gestaoTurmaService      = gestaoTurmaService;
     }
 
     public void startMenu(AlunoDTO aluno) {
@@ -75,6 +80,21 @@ public class MenuAluno {
     }
 
     private void inscreverEmTurma(AlunoDTO aluno) {
+        List<TurmaDTO> disponiveis = gestaoTurmaService.listarTurmasDisponiveisPorAluno(aluno.getId());
+        if (disponiveis.isEmpty()) {
+            System.out.println("Nenhuma turma disponível para inscrição.");
+            return;
+        }
+        System.out.println("\n--- Turmas Disponíveis ---");
+        for (TurmaDTO t : disponiveis) {
+            System.out.printf("ID: %d | %s | Sala: %s | Horário: %s | Professor: %s%n",
+                    t.getId(),
+                    t.getDisciplina().getNome(),
+                    t.getSala(),
+                    t.getHorario1(),
+                    t.getProfessor().getNome());
+        }
+
         System.out.print("\nID da turma: ");
         try {
             Integer turmaId = Integer.parseInt(scanner.nextLine());
@@ -97,6 +117,24 @@ public class MenuAluno {
     }
 
     private void solicitarTrancamento(AlunoDTO aluno) {
+        List<TurmaAlunoDTO> cursando = gestaoMatriculaService.visualizarGrade(aluno.getId())
+                .stream()
+                .filter(ta -> ta.getStatus() == Status.CURSANDO)
+                .toList();
+
+        if (cursando.isEmpty()) {
+            System.out.println("Você não possui turmas em andamento.");
+            return;
+        }
+        System.out.println("\n--- Turmas em Andamento ---");
+        for (TurmaAlunoDTO ta : cursando) {
+            System.out.printf("ID: %d | %s | Sala: %s | Horário: %s%n",
+                    ta.getTurma().getId(),
+                    ta.getTurma().getDisciplina().getNome(),
+                    ta.getTurma().getSala(),
+                    ta.getTurma().getHorario1());
+        }
+
         System.out.print("\nID da turma para trancamento: ");
         try {
             Integer turmaId = Integer.parseInt(scanner.nextLine());
@@ -119,6 +157,20 @@ public class MenuAluno {
     }
 
     private void entregarAtividade(AlunoDTO aluno) {
+        List<AvaliacaoDTO> avaliacoes = gestaoAtividadesService.listarAvaliacoesDisponiveisPorAluno(aluno.getId());
+        if (avaliacoes.isEmpty()) {
+            System.out.println("Nenhuma avaliação disponível.");
+            return;
+        }
+        System.out.println("\n--- Avaliações Disponíveis ---");
+        for (AvaliacaoDTO a : avaliacoes) {
+            System.out.printf("ID: %d | %s | Turma: %s | Prazo: %s%n",
+                    a.getId(),
+                    a.getTitulo(),
+                    a.getTurma().getDisciplina().getNome(),
+                    a.getDataEntrega());
+        }
+
         System.out.print("\nID da avaliação: ");
         try {
             Integer avaliacaoId = Integer.parseInt(scanner.nextLine());

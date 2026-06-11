@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface AvaliacaoRepository extends JpaRepository<Avaliacao, Integer> {
     List<Avaliacao> findAllByTurmaId(Integer turmaId);
+    List<Avaliacao> findAllByTurmaIdIn(List<Integer> turmaIds);
 }

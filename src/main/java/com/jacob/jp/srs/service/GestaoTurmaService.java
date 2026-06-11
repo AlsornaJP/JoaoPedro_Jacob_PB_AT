@@ -93,4 +93,11 @@ public class GestaoTurmaService {
         }
         return new DisciplinaDTO(disciplinaRepository.findByCodigo(codigo));
     }
+
+    public List<TurmaDTO> listarTurmasDisponiveisPorAluno(Integer alunoId) {
+        return turmaRepository.findAllAtivasNaoInscritasPorAluno(alunoId)
+                .stream()
+                .map(TurmaDTO::new)
+                .toList();
+    }
 }

@@ -7,12 +7,9 @@ import com.jacob.jp.srs.exception.InscricaoNotFoundException;
 import com.jacob.jp.srs.exception.TurmaAcessoNegadoException;
 import com.jacob.jp.srs.exception.TurmaInativaException;
 import com.jacob.jp.srs.exception.TurmaNotFoundException;
-import com.jacob.jp.srs.models.Aluno;
-import com.jacob.jp.srs.models.Avaliacao;
-import com.jacob.jp.srs.models.AvaliacaoAluno;
+import com.jacob.jp.srs.models.*;
 import com.jacob.jp.srs.models.DTO.AvaliacaoAlunoDTO;
 import com.jacob.jp.srs.models.DTO.AvaliacaoDTO;
-import com.jacob.jp.srs.models.Turma;
 import com.jacob.jp.srs.repositories.AlunoRepository;
 import com.jacob.jp.srs.repositories.AvaliacaoAlunoRepository;
 import com.jacob.jp.srs.repositories.AvaliacaoRepository;
@@ -108,6 +105,24 @@ public class GestaoAtividadesService {
 
     public List<AvaliacaoDTO> listarAvaliacoesPorTurma(Integer turmaId) {
         return avaliacaoRepository.findAllByTurmaId(turmaId)
+                .stream()
+                .map(AvaliacaoDTO::new)
+                .toList();
+    }
+
+    public List<AvaliacaoDTO> listarAvaliacoesDisponiveisPorAluno(Integer alunoId) {
+        Aluno aluno = alunoRepository.findById(alunoId)
+                .orElseThrow(AlunoNotFoundException::new);
+
+        List<Integer> turmaIds = turmaAlunoRepository.findAllByAlunoId(aluno.getId())
+                .stream()
+                .filter(ta -> ta.getStatus() == Status.CURSANDO)
+                .map(ta -> ta.getTurma().getId())
+                .toList();
+
+        if (turmaIds.isEmpty()) return List.of();
+
+        return avaliacaoRepository.findAllByTurmaIdIn(turmaIds)
                 .stream()
                 .map(AvaliacaoDTO::new)
                 .toList();
