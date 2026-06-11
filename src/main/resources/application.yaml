@@ -9,7 +9,11 @@ spring:
     password: 123
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
   h2:
     console:
       enabled: true
       path: /h2-console
+  sql:
+    init:
+      mode: always

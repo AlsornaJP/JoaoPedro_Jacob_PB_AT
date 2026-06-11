@@ -1,23 +1,20 @@
 package com.jacob.jp.srs.ui.menus;
 
-import com.jacob.jp.srs.exception.AvaliacaoAlunoNotFoundException;
-import com.jacob.jp.srs.exception.HorarioConflictException;
-import com.jacob.jp.srs.exception.TurmaAcessoNegadoException;
-import com.jacob.jp.srs.exception.TurmaInativaException;
-import com.jacob.jp.srs.exception.TurmaNotFoundException;
+import com.jacob.jp.srs.exception.*;
 import com.jacob.jp.srs.models.DTO.AvaliacaoAlunoDTO;
 import com.jacob.jp.srs.models.DTO.AvaliacaoDTO;
 import com.jacob.jp.srs.models.DTO.DisciplinaDTO;
 import com.jacob.jp.srs.models.DTO.ProfessorDTO;
-import com.jacob.jp.srs.models.DTO.SemestreDTO;
 import com.jacob.jp.srs.models.DTO.TurmaDTO;
 import com.jacob.jp.srs.service.GestaoAtividadesService;
 import com.jacob.jp.srs.service.GestaoTurmaService;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
@@ -80,11 +77,19 @@ public class MenuProfessor {
     private void abrirTurma(ProfessorDTO professor) {
         System.out.println("\n--- Abrir Nova Turma ---");
         try {
-            System.out.print("ID da disciplina: ");
-            Integer disciplinaId = Integer.parseInt(scanner.nextLine());
+            List<DisciplinaDTO> disciplinas = gestaoTurmaService.listarDisciplinas();
+            if (disciplinas.isEmpty()) {
+                System.out.println("Nenhuma disciplina cadastrada.");
+                return;
+            }
+            System.out.println("\n--- Disciplinas ---");
+            for (DisciplinaDTO d : disciplinas) {
+                System.out.printf("Código: %s | Nome: %s%n", d.getCodigo(), d.getNome());
+            }
 
-            System.out.print("ID do semestre: ");
-            Integer semestreId = Integer.parseInt(scanner.nextLine());
+            System.out.print("\nCódigo da disciplina: ");
+            String codigoDisciplina = scanner.nextLine();
+            DisciplinaDTO disciplina = gestaoTurmaService.buscarDisciplinaPorCodigo(codigoDisciplina);
 
             System.out.print("Sala: ");
             String sala = scanner.nextLine();
@@ -100,13 +105,10 @@ public class MenuProfessor {
             ProfessorDTO profRef = new ProfessorDTO();
             profRef.setId(professor.getId());
             DisciplinaDTO discRef = new DisciplinaDTO();
-            discRef.setId(disciplinaId);
-            SemestreDTO semRef = new SemestreDTO();
-            semRef.setId(semestreId);
+            discRef.setId(disciplina.getId());
 
             dto.setProfessor(profRef);
             dto.setDisciplina(discRef);
-            dto.setSemestre(semRef);
             dto.setSala(sala);
             dto.setHorario1(horario1);
             dto.setHorario2(horario2);
@@ -117,7 +119,7 @@ public class MenuProfessor {
             System.out.println("ID inválido.");
         } catch (DateTimeParseException e) {
             System.out.println("Formato de horário inválido. Use HH:mm.");
-        } catch (HorarioConflictException e) {
+        } catch (DisciplinaNotFoundException | HorarioConflictException | SemestreNotFoundException e) {
             System.out.println("Erro: " + e.getMessage());
         }
     }
@@ -211,8 +213,11 @@ public class MenuProfessor {
             System.out.print("Enunciado: ");
             String enunciado = scanner.nextLine();
 
-            System.out.print("Prazo de entrega (yyyy-MM-ddTHH:mm): ");
-            LocalDateTime dataEntrega = LocalDateTime.parse(scanner.nextLine());
+            System.out.print("Data de entrega (dd-MM-yyyy): ");
+            LocalDate data = LocalDate.parse(scanner.nextLine(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            System.out.print("Hora de entrega (HH:mm): ");
+            LocalTime hora = LocalTime.parse(scanner.nextLine());
+            LocalDateTime dataEntrega = LocalDateTime.of(data, hora);
 
             System.out.print("Peso: ");
             int peso = Integer.parseInt(scanner.nextLine());
@@ -234,7 +239,7 @@ public class MenuProfessor {
         } catch (NumberFormatException e) {
             System.out.println("Valor inválido.");
         } catch (DateTimeParseException e) {
-            System.out.println("Formato de data inválido. Use yyyy-MM-ddTHH:mm.");
+            System.out.println("Formato de data ou hora inválido.");
         } catch (TurmaNotFoundException | TurmaInativaException | TurmaAcessoNegadoException e) {
             System.out.println("Erro: " + e.getMessage());
         }

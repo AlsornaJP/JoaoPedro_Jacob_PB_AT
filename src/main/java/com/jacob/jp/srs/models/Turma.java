@@ -1,11 +1,11 @@
 package com.jacob.jp.srs.models;
 
-import com.jacob.jp.srs.models.DTO.TurmaDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -43,8 +43,8 @@ public class Turma {
     @Column(name = "ativo", nullable = false)
     private boolean ativo = true;
 
-    @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<TurmaAluno> alunos;
+    @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<TurmaAluno> alunos = new ArrayList<>();
 
     public Turma(Integer id, Professor professor, Disciplina disciplina, Semestre semestre, String sala, LocalTime horario1, LocalTime horario2) {
         this.id = id;

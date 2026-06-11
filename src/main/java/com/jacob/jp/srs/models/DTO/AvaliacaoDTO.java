@@ -21,7 +21,7 @@ public class AvaliacaoDTO {
 
     public AvaliacaoDTO(Avaliacao avaliacao) {
         this.id          = avaliacao.getId();
-        this.turma       = new TurmaDTO(avaliacao.getTurma());
+        this.turma = new TurmaDTO(avaliacao.getTurma(), true);
         this.titulo      = avaliacao.getTitulo();
         this.enunciado   = avaliacao.getEnunciado();
         this.dataEntrega = avaliacao.getDataEntrega();
