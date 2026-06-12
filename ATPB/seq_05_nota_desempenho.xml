@@ -1,0 +1,205 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram name="Lancar Nota" id="seq-lancar-nota">
+    <mxGraphModel dx="1414" dy="752" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1100" pageHeight="750" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=14;fontColor=#393C56;" value="Lançar Nota" vertex="1">
+          <mxGeometry height="30" width="1050" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="MenuProfessor" vertex="1">
+          <mxGeometry height="40" width="130" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="GestaoAtividadesService" vertex="1">
+          <mxGeometry height="40" width="165" x="250" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="raa" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="AvaliacaoAlunoRepository" vertex="1">
+          <mxGeometry height="40" width="170" x="490" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aa" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="AvaliacaoAluno" vertex="1">
+          <mxGeometry height="40" width="140" x="740" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a-ui" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="360" width="14" x="98" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="a-svc" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="300" width="14" x="325" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="a-raa1" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="568" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="a-aa" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="808" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="a-raa2" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="568" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="d-ui" edge="1" parent="1" source="ui" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="105" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-svc" edge="1" parent="1" source="svc" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="332" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-raa" edge="1" parent="1" source="raa" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-aa" edge="1" parent="1" source="aa" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="815" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="lancarNota(dto)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="112" y="140" as="sourcePoint" />
+            <mxPoint x="325" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="findById(dto.id)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="339" y="165" as="sourcePoint" />
+            <mxPoint x="568" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="AvaliacaoAluno">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="568" y="185" as="sourcePoint" />
+            <mxPoint x="339" y="185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="lancarNota(dto.nota)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="339" y="235" as="sourcePoint" />
+            <mxPoint x="808" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" edge="1" parent="1" style="html=1;endArrow=none;strokeColor=#393C56;fontColor=#393C56;align=left;fontSize=11;" value="nota = dto.nota; corrigido = true">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="822" y="255" as="sourcePoint" />
+            <mxPoint x="822" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="save(avaliacaoAluno)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="339" y="310" as="sourcePoint" />
+            <mxPoint x="568" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="void">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="325" y="430" as="sourcePoint" />
+            <mxPoint x="112" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#393C56;align=left;fontSize=11;" value="[alt] AvaliacaoAlunoNotFoundException&#xa;se findById = empty&#xa;[alt] NotaInvalidaException&#xa;se nota &lt; 0 ou nota &gt; 10" vertex="1">
+          <mxGeometry height="75" width="230" x="600" y="145" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Visualizar Desempenho" id="seq-desempenho">
+    <mxGraphModel dx="1000" dy="700" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="900" pageHeight="650" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Visualizar Desempenho" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=14;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="0" y="10" width="850" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" value="MenuAluno" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" value="GestaoAtividadesService" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="60" width="165" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ral" value="AlunoRepository" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="60" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="raa" value="AvaliacaoAlunoRepository" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="685" y="60" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="a-ui" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="90" y="100" width="14" height="330" as="geometry" />
+        </mxCell>
+        <mxCell id="a-svc" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="310" y="130" width="14" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="a-ral" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="538" y="155" width="14" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a-raa" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="753" y="225" width="14" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d-ui" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="ui">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="97" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-svc" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="svc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="317" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-ral" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="ral">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-raa" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="raa">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1" value="visualizarDesempenho(alunoId)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="104" y="140" as="sourcePoint" />
+            <mxPoint x="310" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="findById(alunoId)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="324" y="165" as="sourcePoint" />
+            <mxPoint x="538" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="Aluno" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="538" y="185" as="sourcePoint" />
+            <mxPoint x="324" y="185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="findAllByAlunoId(aluno.id)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="324" y="235" as="sourcePoint" />
+            <mxPoint x="753" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="List&lt;AvaliacaoAluno&gt;" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="753" y="255" as="sourcePoint" />
+            <mxPoint x="324" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="map(AvaliacaoAlunoDTO::new)" style="html=1;endArrow=none;strokeColor=#393C56;fontColor=#393C56;align=left;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="324" y="290" as="sourcePoint" />
+            <mxPoint x="324" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="List&lt;AvaliacaoAlunoDTO&gt;" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="400" as="sourcePoint" />
+            <mxPoint x="104" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" value="[alt] AlunoNotFoundException&#xa;se findById = empty" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#393C56;align=left;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="565" y="150" width="185" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

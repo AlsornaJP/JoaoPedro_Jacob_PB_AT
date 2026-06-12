@@ -1,0 +1,260 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram name="Abrir Turma" id="seq-abrir-turma">
+    <mxGraphModel dx="1414" dy="695" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=14;fontColor=#393C56;" value="Abrir Turma" vertex="1">
+          <mxGeometry height="30" width="1350" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="MenuProfessor" vertex="1">
+          <mxGeometry height="40" width="130" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="GestaoTurmaService" vertex="1">
+          <mxGeometry height="40" width="150" x="240" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rprof" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="ProfessorRepository" vertex="1">
+          <mxGeometry height="40" width="150" x="460" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rdisc" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="DisciplinaRepository" vertex="1">
+          <mxGeometry height="40" width="155" x="680" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rsem" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="SemestreRepository" vertex="1">
+          <mxGeometry height="40" width="150" x="905" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rturma" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="TurmaRepository" vertex="1">
+          <mxGeometry height="40" width="140" x="1125" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="a-ui" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="490" width="14" x="98" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="a-svc" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="430" width="14" x="308" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="a-rprof" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="528" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="a-rdisc" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="748" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="a-rsem" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="973" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="a-rturma1" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="1193" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="a-rturma2" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="1193" y="455" as="geometry" />
+        </mxCell>
+        <mxCell id="d-ui" edge="1" parent="1" source="ui" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="105" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-svc" edge="1" parent="1" source="svc" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="315" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-rprof" edge="1" parent="1" source="rprof" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="535" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-rdisc" edge="1" parent="1" source="rdisc" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="757" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-rsem" edge="1" parent="1" source="rsem" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="980" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-rturma" edge="1" parent="1" source="rturma" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1200" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="abrirTurma(dto)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="112" y="140" as="sourcePoint" />
+            <mxPoint x="308" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="findById(professorId)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="322" y="165" as="sourcePoint" />
+            <mxPoint x="528" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="Professor">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="528" y="185" as="sourcePoint" />
+            <mxPoint x="322" y="185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="findById(disciplinaId)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="322" y="235" as="sourcePoint" />
+            <mxPoint x="748" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="Disciplina">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="748" y="255" as="sourcePoint" />
+            <mxPoint x="322" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;fontSize=10;" value="findByDataInicialLessThanEqualAndDataFinalGreaterThanEqual(hoje)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="322" y="305" as="sourcePoint" />
+            <mxPoint x="973" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="Semestre ativo">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="973" y="325" as="sourcePoint" />
+            <mxPoint x="322" y="325" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;fontSize=10;" value="existsByProfessorIdAndSemestreIdAndHorario1AndAtivoTrue(...)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="322" y="375" as="sourcePoint" />
+            <mxPoint x="1193" y="375" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="false (sem conflito)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1193" y="395" as="sourcePoint" />
+            <mxPoint x="322" y="395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="save(new Turma(...))">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="322" y="465" as="sourcePoint" />
+            <mxPoint x="1193" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m11" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="Turma salva">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1193" y="485" as="sourcePoint" />
+            <mxPoint x="322" y="485" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m12" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="TurmaDTO">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="308" y="540" as="sourcePoint" />
+            <mxPoint x="112" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#393C56;align=left;fontSize=11;" value="[alt] HorarioConflictException&#xa;se existsByHorario1 = true" vertex="1">
+          <mxGeometry height="50" width="175" x="1210" y="360" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Fechar Turma" id="seq-fechar-turma">
+    <mxGraphModel dx="1000" dy="700" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="900" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Fechar Turma" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=14;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="0" y="10" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" value="MenuProfessor" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" value="GestaoTurmaService" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="60" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="repo" value="TurmaRepository" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="60" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="turma" value="Turma" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="750" y="60" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="a-ui" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="118" y="100" width="14" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="a-svc" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="348" y="130" width="14" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="a-repo1" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="588" y="155" width="14" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="a-turma" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="800" y="225" width="14" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="a-repo2" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="588" y="285" width="14" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="d-ui" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="ui">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="125" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-svc" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="svc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-repo" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="repo">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="595" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d-turma" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="turma">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="807" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1" value="fecharTurma(id)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="132" y="140" as="sourcePoint" />
+            <mxPoint x="348" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="findById(id)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362" y="165" as="sourcePoint" />
+            <mxPoint x="588" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="Turma" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="588" y="185" as="sourcePoint" />
+            <mxPoint x="362" y="185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="fechar()" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362" y="235" as="sourcePoint" />
+            <mxPoint x="800" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="ativo = false" style="html=1;endArrow=none;strokeColor=#393C56;fontColor=#393C56;align=left;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="814" y="250" as="sourcePoint" />
+            <mxPoint x="814" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="save(turma)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362" y="295" as="sourcePoint" />
+            <mxPoint x="588" y="295" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="void" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="348" y="350" as="sourcePoint" />
+            <mxPoint x="132" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" value="[alt] TurmaNotFoundException&#xa;se findById = empty" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#393C56;align=left;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="150" width="175" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,237 @@
+<mxfile host="app.diagrams.net" pages="2">
+  <diagram name="Criar Conta" id="seq-criar-conta">
+    <mxGraphModel dx="1414" dy="695" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=14;fontColor=#393C56;" value="Criar Conta (Aluno)" vertex="1">
+          <mxGeometry height="30" width="900" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="MenuCriarConta" vertex="1">
+          <mxGeometry height="40" width="130" x="60" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="GestaoContaService" vertex="1">
+          <mxGeometry height="40" width="150" x="280" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="val" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="AlunoValidator" vertex="1">
+          <mxGeometry height="40" width="130" x="520" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gen" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="GeradorDeMatricula" vertex="1">
+          <mxGeometry height="40" width="150" x="730" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="repo" parent="1" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" value="AlunoRepository" vertex="1">
+          <mxGeometry height="40" width="130" x="960" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act-ui" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="300" width="14" x="118" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="act-svc" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="240" width="14" x="348" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="act-val" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="60" width="14" x="578" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="act-gen" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="798" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="act-repo" parent="1" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" value="" vertex="1">
+          <mxGeometry height="50" width="14" x="1018" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="dash-ui" edge="1" parent="1" source="ui" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" x="125" y="100" as="geometry">
+            <mxPoint x="125" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dash-svc" edge="1" parent="1" source="svc" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" x="355" y="100" as="geometry">
+            <mxPoint x="355" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dash-val" edge="1" parent="1" source="val" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" x="585" y="100" as="geometry">
+            <mxPoint x="585" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dash-gen" edge="1" parent="1" source="gen" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" x="805" y="100" as="geometry">
+            <mxPoint x="805" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dash-repo" edge="1" parent="1" source="repo" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" value="">
+          <mxGeometry relative="1" x="1025" y="100" as="geometry">
+            <mxPoint x="1025" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="registrarAluno(dto)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="132" y="140" as="sourcePoint" />
+            <mxPoint x="348" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="validarEmail(dto)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362" y="165" as="sourcePoint" />
+            <mxPoint x="578" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="existsByEmail(email)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="592" y="185" as="sourcePoint" />
+            <mxPoint x="1018" y="185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="false">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1018" y="205" as="sourcePoint" />
+            <mxPoint x="592" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="gerarMatricula(dto)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362" y="245" as="sourcePoint" />
+            <mxPoint x="798" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" edge="1" parent="1" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="save(aluno)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362" y="315" as="sourcePoint" />
+            <mxPoint x="1018" y="315" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="Aluno salvo">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1018" y="335" as="sourcePoint" />
+            <mxPoint x="362" y="335" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" edge="1" parent="1" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" value="void">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="348" y="370" as="sourcePoint" />
+            <mxPoint x="132" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#393C56;align=left;fontSize=11;" value="[alt] e-mail já existe:&#xa;EmailAlreadyExistsException" vertex="1">
+          <mxGeometry height="50" width="200" x="610" y="140" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Login" id="seq-login">
+    <mxGraphModel dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Login (Aluno)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontStyle=1;fontSize=14;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="0" y="10" width="800" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ui" value="MenuLogin" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="svc" value="GestaoContaService" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="60" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="val" value="AlunoValidator" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="60" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="repo" value="AlunoRepository" style="shape=umlLifeline;perimeter=mxPerimeter.rectanglePerimeter;whiteSpace=wrap;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="60" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="act-ui" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="118" y="100" width="14" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="act-svc" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="348" y="130" width="14" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="act-val" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="578" y="155" width="14" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="act-repo" value="" style="shape=activation;fillColor=#E07A5F;strokeColor=#E07A5F;" vertex="1" parent="1">
+          <mxGeometry x="798" y="175" width="14" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="dash-ui" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="ui">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="125" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dash-svc" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="svc">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dash-val" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="val">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="585" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dash-repo" value="" style="dashed=1;endArrow=none;strokeColor=#E07A5F;" edge="1" parent="1" source="repo">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="805" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m1" value="loginAluno(email, senha)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="132" y="140" as="sourcePoint" />
+            <mxPoint x="348" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="validarLogin(email, senha)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362" y="165" as="sourcePoint" />
+            <mxPoint x="578" y="165" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="existsByEmail(email)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="592" y="185" as="sourcePoint" />
+            <mxPoint x="798" y="185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="true" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="798" y="205" as="sourcePoint" />
+            <mxPoint x="592" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="findByEmail(email)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="592" y="225" as="sourcePoint" />
+            <mxPoint x="798" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="professor" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="798" y="245" as="sourcePoint" />
+            <mxPoint x="592" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="senha.equals(senha) ✓" style="html=1;endArrow=none;strokeColor=#393C56;fontColor=#393C56;align=left;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="592" y="270" as="sourcePoint" />
+            <mxPoint x="592" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m8" value="buscarPorEmail(email)" style="html=1;endArrow=open;endFill=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="362" y="290" as="sourcePoint" />
+            <mxPoint x="578" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m9" value="AlunoDTO" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="578" y="310" as="sourcePoint" />
+            <mxPoint x="362" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m10" value="AlunoDTO" style="html=1;endArrow=open;endFill=0;dashed=1;strokeColor=#393C56;fontColor=#393C56;align=center;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="348" y="340" as="sourcePoint" />
+            <mxPoint x="132" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="note1" value="[alt] email não encontrado:&#xa;EmailNotFoundException&#xa;[alt] senha errada:&#xa;IllegalArgumentException" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#393C56;align=left;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="155" width="210" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
